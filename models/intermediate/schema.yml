@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: int_sales_margin
+    description: combinded product and sales
+    columns:
+      - name: products_id
+        description: id for products
+        tests:
+         - not_null
+      - name: date_date
+        description: date of sales
+        tests:
+         - not_null
+      - name: orders_id
+        description: id for orders
+        tests:
+         - not_null
+      - name: revenue 
+        description: revenue for each order
+        tests:
+         - not_null
+      - name: quantity
+        description: nb of products purchased per order
+        tests:
+         - not_null
+      - name: purchase_price
+        description: price products were bought for
+        tests:
+         - not_null
+      - name: margin
+        description: money made from each sales
+        tests:
+         - not_null
+    tests:
+      - unique:
+         column_name: "(products_id || '_' || orders_id)"
+  - name: int_orders_margin
+    description: margin per order
+    columns:
+     - name: orders_id
+       description: id for orders
+       tests:
+         - unique
+         - not_null
+     - name: date_date
+       description: date of sales
+       tests:
+         - not_null
+     - name: revenue 
+       description: revenue for each order
+       tests:
+         - not_null
+     - name: quantity
+       description: nb of products purchased per order
+       tests:
+         - not_null
+     - name: purchase_cost
+       description: total cost for a specific product 
+       tests:
+         - not_null
+     - name: margin
+       description: money made from each sales
+       tests:
+         - not_null
+  - name: int_orders_operational
+    description: margin per order
+    columns:
+     - name: orders_id
+       description: id for orders
+       tests:
+         - unique
+         - not_null
+     - name: date_date
+       description: date of sales
+       tests:
+         - not_null
+     - name: operational_margin
+       description: margin - shipping costs
+       tests:
+         - not_null
+     - name: revenue 
+       description: revenue for each order
+       tests:
+         - not_null
+     - name: quantity
+       description: nb of products purchased per order
+       tests:
+         - not_null
+     - name: purchase_cost
+       description: total cost for a specific product 
+       tests:
+         - not_null
+     - name: margin
+       description: money made from each sales
+       tests:
+         - not_null
