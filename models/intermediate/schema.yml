@@ -95,3 +95,31 @@ models:
        description: money made from each sales
        tests:
          - not_null
+  - name: finance_days
+    description: finance overview per day
+    columns:
+     - name: date_date
+       description: daily financial log
+       tests:
+         - unique
+         - not_null
+     - name: transaction_nb 
+       description: number of purchases per day
+       tests:
+         - not_null
+     - name: revenue 
+       description: revenue for each order
+       tests:
+         - not_null
+     - name: avg_basket
+       description: average revenue per purchase
+       tests:
+         - not_null
+     - name: margin
+       description: money made from each sales
+       tests:
+         - not_null
+     - name: operational_margin
+       description: margin - shipping costs
+       tests:
+         - not_null
