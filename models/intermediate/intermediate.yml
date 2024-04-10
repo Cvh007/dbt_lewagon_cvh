@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_sales_margin
-    description: combinded product and sales
+    description: combined product and sales
     columns:
       - name: products_id
         description: id for products
@@ -64,7 +64,7 @@ models:
        tests:
          - not_null
   - name: int_orders_operational
-    description: margin per order
+    description: margin - logistics cost  per order
     columns:
      - name: orders_id
        description: id for orders
