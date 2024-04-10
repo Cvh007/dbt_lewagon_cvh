@@ -43,10 +43,6 @@ models:
       finance:
         schema: finance
     intermediate:
-      +materialized: view
-      finance:
-        schema: intermediate
+      schema: intermediate
     staging:
-      +materialized: view
-      finance:
-        schema: staging
+      schema: staging
