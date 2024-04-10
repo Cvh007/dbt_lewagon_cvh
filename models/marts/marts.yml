@@ -38,7 +38,7 @@ models:
          - unique
          - not_null
       - name: ads_margin
-        description: margin made after deducing ads cost from opertional margin
+        description: (margin made after deducing ads cost from opertional margin) per day
         tests:
          - not_null
       - name: avg_basket
@@ -46,7 +46,7 @@ models:
         tests:
          - not_null
       - name: operational_margin
-        description: margin - shipping costs
+        description: SUM(margin - shipping costs) per day
         tests:
          - not_null
       - name: ads_cost
@@ -55,5 +55,33 @@ models:
          - not_null
       - name: revenue 
         description: total revenue per day
+        tests:
+         - not_null
+  - name: finance_campaigns_month
+    description: finance overview per month with marketing actions
+    columns:
+      - name: datemonth
+        description: monthly financial log
+        tests:
+         - unique
+         - not_null
+      - name: ads_margin
+        description: (margin made after deducing ads cost from opertional margin) per month
+        tests:
+         - not_null
+      - name: avg_basket
+        description: average revenue per purchase
+        tests:
+         - not_null
+      - name: operational_margin
+        description: SUM(margin - shipping costs) per month
+        tests:
+         - not_null
+      - name: ads_cost
+        description: total ads cost per month
+        tests:
+         - not_null
+      - name: revenue 
+        description: total revenue per month
         tests:
          - not_null
