@@ -14,7 +14,7 @@ models:
         tests:
          - not_null
       - name: revenue 
-        description: revenue for each order
+        description: total revenue per day
         tests:
          - not_null
       - name: avg_basket
@@ -22,10 +22,66 @@ models:
         tests:
          - not_null
       - name: margin
-        description: money made from each sales
+        description: money made from each sales (revenue - (quantity * purchase_price)
         tests:
          - not_null
       - name: operational_margin
         description: margin - shipping costs
+        tests:
+         - not_null
+  - name: finance_campaigns_day
+    description: finance overview per day with marketing actions
+    columns:
+      - name: date_date
+        description: daily financial log
+        tests:
+         - unique
+         - not_null
+      - name: ads_margin
+        description: (margin made after deducing ads cost from opertional margin) per day
+        tests:
+         - not_null
+      - name: avg_basket
+        description: average revenue per purchase
+        tests:
+         - not_null
+      - name: operational_margin
+        description: SUM(margin - shipping costs) per day
+        tests:
+         - not_null
+      - name: ads_cost
+        description: total ads cost per day
+        tests:
+         - not_null
+      - name: revenue 
+        description: total revenue per day
+        tests:
+         - not_null
+  - name: finance_campaigns_month
+    description: finance overview per month with marketing actions
+    columns:
+      - name: datemonth
+        description: monthly financial log
+        tests:
+         - unique
+         - not_null
+      - name: ads_margin
+        description: (margin made after deducing ads cost from opertional margin) per month
+        tests:
+         - not_null
+      - name: avg_basket
+        description: average revenue per purchase
+        tests:
+         - not_null
+      - name: operational_margin
+        description: SUM(margin - shipping costs) per month
+        tests:
+         - not_null
+      - name: ads_cost
+        description: total ads cost per month
+        tests:
+         - not_null
+      - name: revenue 
+        description: total revenue per month
         tests:
          - not_null
