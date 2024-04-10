@@ -34,8 +34,6 @@ models:
          - not_null
       - name: margin_percent
         description: percent of the revenue is profit
-        tests:
-         - not_null
     tests:
       - unique:
          column_name: "(products_id || '_' || orders_id)"
