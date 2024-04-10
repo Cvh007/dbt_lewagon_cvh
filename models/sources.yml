@@ -11,6 +11,7 @@ sources:
         tests:
           - unique:
               column_name: "(orders_id || '_' || pdt_id)"
+
       - name: ship
         identifier: raw_gz_ship
         Description: shipping info of greenweez
@@ -30,3 +31,22 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: performance of facebook campaigns
+
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: performancce of criteo campaigns
+
+      - name: bing
+        identifier: raw_gz_bing
+        description: performancce of bing campaigns
+
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: performance of adwords campaigns
+
+          
+           
